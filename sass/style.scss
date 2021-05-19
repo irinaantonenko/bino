@@ -15,10 +15,11 @@ $font_family1: 'Aleo', serif;
 $font_family2: 'Josefin Sans', sans-serif;
 $main_background: #5474fd;
 $xxxl: 2560px;
-$xxl: 1440px;
-$xl: 1024px;
-$lg: 768px;
-$sm: 425px;
+$xxl: 1570px;
+$xl: 1170px;
+$lg: 988px;
+$md: 770px;
+$sm: 480px;
 $xs: 375px;
 $xs: 320px;
 @font-face {
@@ -53,16 +54,23 @@ body {
     max-width: 1110px;
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: inherit;
     @media (max-width: $xxxl) {
-        max-width: 2000px;
+        max-width: 1500px;
     }
     @media (max-width: $xxl) {
         max-width: 1100px;
     }
     @media (max-width: $xl) {
-        max-width: 600px;
+        max-width: 900px;
     }
     @media (max-width: $lg) {
+        max-width: 800px;
+    }
+    @media (max-width: $md) {
         max-width: 500px;
     }
     @media (max-width: $sm) {
@@ -70,7 +78,7 @@ body {
     }
 }
 .section__main {
-    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(1, 1, 1, 0.2))), url(../images/background_1.png);
+    background-image: linear-gradient( to top, rgba(1, 1, 1, 0.2)), url(../images/background_1.png);
     min-height: calc(100vh - 3em);
 }
 .h1, .title__upper, .button, .header {
@@ -89,7 +97,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    min-height: calc(100vh - 3em);
+    min-height: inherit;
     &__items {
         display: flex;
         flex-direction: column;
@@ -194,7 +202,7 @@ body {
     }
     @media (max-width: $sm) {
         display: none;
-    }
+    } 
 }
 .search {
     padding: 18px 52px;
@@ -222,12 +230,11 @@ body {
 }
 .header {
     margin: 0;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    height: 3em; 
+    min-height: inherit; 
     &__item {
         display: flex;
         flex-direction: row;
@@ -296,11 +303,14 @@ body {
         position: absolute;
         background-color: $main_color;
         width: 100%;
-        top: -315px;
+        top: -322px;
         left: 0;
         z-index: 1;
         transform: translateY(-150vh);
         transition: transform 0.3s ease;
+        @media (max-width: $lg) {
+            top: -290px;
+        }
     }
     .nav__list{
         height: auto;
@@ -318,7 +328,7 @@ body {
     }
 }
 .section__choice {
-    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 3, 3, 0.9))), url(../images/background_2.png);
+    background-image: linear-gradient(to top, rgba(3, 3, 3, 0.9)), url(../images/background_2.png);
     min-height: 90vh;
 }
 .content__choice {
@@ -327,12 +337,13 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    min-height: inherit;
+    padding: 0 10px;
     &__item {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
-        padding-top: 70px;
+        justify-content: space-between; 
         width: 50%;
     }
     &__secondchild {
@@ -345,7 +356,7 @@ body {
     position: relative;
     margin-top: 5px;
     &__first {
-        left: -100px;
+        left: -6.25em;
         @media (max-width: $lg) {
             left: -20px;
         }
@@ -367,20 +378,21 @@ body {
     border-radius: 48px;
     position: relative;
     @media (max-width: $xl) {
-        min-width: 5em;
-        min-height: 5em;
+        min-width: 4em;
+        min-height: 4em;
     }
     @media (max-width: $lg) {
-        min-width: 3em;
-        min-height: 3em;
+        min-width: 2em;
+        min-height: 2em;
     }
     @media (max-width: $sm) {
-        display: none;
+        min-width: 1em;
+        min-height: 1em;
     }
     @media (max-width: $xs) {
-        display: none;
+        min-width: 1em;
+        min-height: 1em;
     }
-
 }
 .img {
     width: 100%;
@@ -400,14 +412,12 @@ body {
 .content__selection{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    min-height: 21em;
+    align-items: stretch;
+    min-height: inherit;
     color: $color2;
-    @media (max-width: $sm) {
-        display: none;
-    }
-    @media (max-width: $xs) {
-        display: none;
+    @media (max-width: $xxl) {
+        flex-direction: column;
+        padding: 20px;
     }
     &__item {
     display: flex;
@@ -415,6 +425,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin: 0 6.25em;
     }
 }
 .section__spain__left {
@@ -429,9 +440,20 @@ body {
     width: 50%;
     background-color: rgba(35, 35, 35, 0.9);
     padding: 50px 20px;
-    margin-top: 100px;
+    @media (max-width: $md) {
+        width: 70%;
+    }
     &__right {
         margin-left: 50%;
+        @media (max-width: $md) {
+            margin-left: 20%;
+        }
+    }
+    &__left {
+        margin-left: -50%;
+        @media (max-width: $md) {
+            margin-left: -20%;
+        }
     }
 }
 .section__spain__right {
@@ -440,7 +462,7 @@ body {
     display: flex;
 }
 .section__reviews {
-    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 3, 3, 0.9))), url(../images/background_5.png);
+    background-image: linear-gradient(to top, rgba(3, 3, 3, 0.9)), url(../images/background_5.png);
     min-height: 90vh;
 }
 .content__reviews {
@@ -448,19 +470,26 @@ body {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    padding-top: 50px;
     &__item {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    padding-top: 50px;
+    @media (max-width: $md) {
+        flex-direction: column;
+        align-items: center;
+    }
     }
     &__lastchild {
         background-color: #333;
         overflow: hidden;
-        word-break: break;
         padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
+}
+.padding {
+    padding: 0 40px;
 }
 .section__end {
     background-color: #232323;
@@ -472,8 +501,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
-    padding-top: 50px;
+    min-height: inherit;
 }
 .specaial__icon {
     color: $main_background;
