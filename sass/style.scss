@@ -67,3 +67,143 @@ body {
         max-width: 300px;
     }
 }
+.section__main {
+    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_main/tu-tram-pham-202263.png);
+    min-height: calc(100vh - 5.7em);
+}
+.section__navigation {
+    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%);
+    color: $main_color;
+    min-height: 5.7em;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.header {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    min-height: inherit; 
+    &__item {
+        display: flex;
+        flex-direction: row;
+        color: $main_color;
+        font-size: $logo;
+        font-weight: bold;
+    }
+}
+.nav__list {
+    margin: 0;
+    display: flex;
+    list-style: circle;
+    list-style-position: inside;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0;
+}
+.nav__item {
+    margin: 0;
+    cursor: pointer;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: $min_text;
+    font-family: $font_family1;
+    font-weight: 400;
+    :hover {
+        background-color: $main_color;
+        color: rgba(124, 91, 249, 1);
+        box-shadow: inset 0 0 0 2px;
+    }     
+}
+.link {
+    width: 100%;
+    margin: 0;
+    text-decoration: none;
+    color: $main_color;
+    padding: 10px;
+}
+.burger {
+    display: none;
+}
+.burger:checked ~ .nav {
+    transform: translateY(201%);
+}
+.burger__label {
+    display: none;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    height: 48px;   
+}
+.burger__line {
+    width: 80%;
+    height: 3px;
+    background: $main_color;    
+}
+@media (max-width: $xs) {
+    .burger__label {
+        display: flex;
+        cursor: pointer;
+    }
+    .nav {
+        max-height: calc(100vh - 4em);
+        overflow: auto;
+        position: absolute;
+        background-color: $main_color;
+        width: 100%;
+        top: -322px;
+        left: 0;
+        z-index: 1;
+        transform: translateY(-150vh);
+        transition: transform 0.3s ease;
+        @media (max-width: $xs) {
+            top: -290px;
+        }
+    }
+    .nav__list{
+        height: auto;
+        overflow: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        background-color: $main_background;
+    }
+    .nav__item {
+        display: block;
+    }
+    .link {
+        padding: 5px;
+    }
+}
+.circle {
+    background-color: inherit;
+    border-radius: 50%;
+    border: #fff 1px solid;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.arrow {
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid $main_color;
+    border-right: 1px solid $main_color;
+    margin-right: 6px;
+    transform: rotate(135deg);
+    margin-left: 5px;
+}
+.icon{
+    height: 20px;
+    width: 20px;
+}
