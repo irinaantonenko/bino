@@ -67,12 +67,16 @@ body {
         max-width: 300px;
     }
 }
-.section__main {
+.section__firstchild {
     background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_main/tu-tram-pham-202263.png);
     min-height: calc(100vh - 5.7em);
 }
-.section__main_2 {
+.section__secondchild {
     background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/photos-1284iH4Hjf4mhNgW.png);
+    min-height: calc(100vh - 5.7em);
+}
+.section__thirdchild {
+    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/matthew-hamilton-202227.png);
     min-height: calc(100vh - 5.7em);
 }
 .section__navigation {
@@ -96,6 +100,11 @@ body {
         color: $main_color;
         font-size: $logo;
         font-weight: bold;
+    }
+    &__thirdchild {
+        @media (max-width: $lg) {
+            display: none;
+        }
     }
 }
 .nav__list {
@@ -131,30 +140,30 @@ body {
 }
 .burger {
     display: none;
+    &__label {
+        display: none;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        width: 48px;
+        height: 48px;   
+    }
+    &__line {
+        width: 80%;
+        height: 3px;
+        background: $main_color;    
+    }
 }
 .burger:checked ~ .nav {
-    transform: translateY(201%);
+    transform: translateY(230%);
 }
-.burger__label {
-    display: none;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    width: 48px;
-    height: 48px;   
-}
-.burger__line {
-    width: 80%;
-    height: 3px;
-    background: $main_color;    
-}
-@media (max-width: $xs) {
+@media (max-width: $xl) {
     .burger__label {
         display: flex;
         cursor: pointer;
     }
     .nav {
-        max-height: calc(100vh - 4em);
+        max-height: calc(100vh - 5.7em);
         overflow: auto;
         position: absolute;
         background-color: $main_color;
@@ -167,17 +176,17 @@ body {
         @media (max-width: $xs) {
             top: -290px;
         }
-    }
-    .nav__list{
-        height: auto;
-        overflow: auto;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        background-color: $main_background;
-    }
-    .nav__item {
-        display: block;
+        &__list{
+            height: auto;
+            overflow: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            background-color: $main_background;
+        }
+        &__item {
+            display: block;
+        }
     }
     .link {
         padding: 5px;
@@ -218,22 +227,24 @@ body {
     justify-content: space-around;
     min-height: inherit;
 }
-/* Собственно сам слайдер */
+.content__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .slider{
-    max-width: 100;
+    max-width: 100%;
     position: relative;    
-    height: 300px;
+    height: 75vh;
     margin-bottom: 130px;
     margin: auto;
 }
-/* Картинка мастабируется по отношению к родительскому элементу */
 .slider .item img {
     object-fit: cover;
     width: 100%;
     height: 300px;
 }
-
-/* Кнопки вперед и назад */
 .slider .prev, .slider .next {
     cursor: pointer;
     position: absolute;
@@ -248,43 +259,26 @@ body {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
 }
-
-
 .slider .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-
-
-/* При наведении на кнопки добавляем фон кнопок */
-
 .slider .prev:hover,
 .slider .next:hover {
     background-color: rgba(109, 44, 212, 0.8);
 }
-
-
-/* Заголовок слайда */
 .slideText {
     position: absolute;
     color: #fff;
     font-size: 35px;
-    /* Выравнивание текста по горизонтали и по вертикали*/
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* Тень*/
     text-shadow: 1px 1px 1px #000, 0 0 1em #000;
 }
-
-
-/* Кружочки */
-
 .slider-dots {
   text-align: center;
- 
-}
-.slider-dots_item{
+    &_item{
     cursor: pointer;
     height: 12px;
     width: 12px;
@@ -293,23 +287,18 @@ body {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+    }
 }
-
 .active,
 .slider-dots_item:hover {
     background-color: rgba(109, 44, 212, 0.8);
 }
-
-
-/* Анимация слайдов */
-
 .slider .item {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
 }
-
 @-webkit-keyframes fade {
     from {
         opacity: .4
@@ -318,7 +307,6 @@ body {
         opacity: 1
     }
 }
-
 @keyframes fade {
     from {
         opacity: .4
