@@ -1,27 +1,33 @@
-/* Индекс слайда по умолчанию */
+/*Active navigation*/
+let header = document.getElementById("nav__list");
+let btns = header.getElementsByClassName("nav__item");
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    let current = document.getElementsByClassName("active__item");
+    current[0].className = current[0].className.replace(" active__item", "");
+    this.className += " active__item";
+  });
+}
+/*Slider*/
 let slideIndex = 1;
 showSlides(slideIndex);
 
-/* Функция увеличивает индекс на 1, показывает следующй слайд*/
 function plusSlide() {
     showSlides(slideIndex += 1);
 }
 
-/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
 function minusSlide() {
     showSlides(slideIndex -= 1);  
 }
 
-/* Устанавливает текущий слайд */
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-/* Основная функция сладера */
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("item");
-    let dots = document.getElementsByClassName("slider-dots_item");
+    let dots = document.getElementsByClassName("slider-dots__item");
     if (n > slides.length) {
       slideIndex = 1
     }
