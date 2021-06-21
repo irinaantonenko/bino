@@ -88,8 +88,14 @@ body {
 }
 
 .section__thirdchild {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(85, 182, 254, 0.6)), color-stop(70.71%, rgba(124, 91, 249, 0.8))), url(../images/matthew-hamilton-202227.png);
-  background-image: linear-gradient(90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/matthew-hamilton-202227.png);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(85, 182, 254, 0.6)), color-stop(70.71%, rgba(124, 91, 249, 0.8))), url(../images/section_news/matthew-hamilton-202227.png);
+  background-image: linear-gradient(90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_news/matthew-hamilton-202227.png);
+  min-height: calc(100vh - 5.7em);
+}
+
+.section__news {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(85, 182, 254, 0.6)), color-stop(70.71%, rgba(124, 91, 249, 0.8))), url(../images/section_news/city2x.png);
+  background-image: linear-gradient(270deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_news/city2x.png);
   min-height: calc(100vh - 5.7em);
 }
 
@@ -439,7 +445,7 @@ body {
   }
 }
 
-.h1, .h2, .h3 {
+.h1, .h2, .h3, .btn {
   text-align: center;
   text-transform: uppercase;
 }
@@ -557,5 +563,240 @@ body {
   left: calc(50% - 43px);
   top: 6px;
   border-radius: 50px;
+}
+
+.header__news {
+  padding-top: 50px;
+  position: relative;
+}
+
+.news__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 -15px;
+  border-radius: 20px;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #000;
+}
+
+.news__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  margin: 15px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: calc(25% - 30px);
+  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 260px;
+  padding-bottom: 10px;
+  background-color: #fff;
+}
+
+.news__item:hover {
+  margin: 15px;
+  width: calc(25% - 30px);
+  -webkit-box-shadow: 0 0 7px 10px rgba(109, 44, 212, 0.8);
+          box-shadow: 0 0 7px 10px rgba(109, 44, 212, 0.8);
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .news__item:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+.news__image {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.header__gallery, .header__contacts {
+  padding-top: 50px;
+  position: relative;
+  color: #000;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.gallery__photo {
+  position: relative;
+}
+
+.photos {
+  /*overflow: hidden;*/
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+      grid-template-areas: "photo1 photo1 photo2 photo3" "photo1 photo1 photo4 photo5";
+}
+
+.photo1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: photo1;
+}
+
+.photo2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: photo2;
+}
+
+.photo3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: photo3;
+}
+
+.photo4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: photo4;
+}
+
+.photo5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: photo5;
+}
+
+/*.filterDiv {
+    display: none;
+}
+   
+.show {
+    display: block;
+}*/
+.contacts {
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 1.29;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contacts__text {
+  font-weight: 700;
+}
+
+.contacts__img {
+  margin-right: 10px;
+}
+
+.contacts__link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #252A34;
+}
+
+.contacts__link:hover {
+  border-bottom: 3px solid rgba(179, 79, 236, 0.9);
+  border-radius: 1px;
+  color: rgba(179, 79, 236, 0.9);
+}
+
+.contacts__container {
+  position: absolute;
+}
+
+.content__contacts {
+  background: #fff;
+}
+
+.contacts__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  color: #000;
+}
+
+.contacts__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background: #fff;
+}
+
+.section__footer {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(85, 182, 254, 0.6)), color-stop(70.71%, rgba(124, 91, 249, 0.8))), url(../images/section_footer/scott-webb-176434.png);
+  background-image: linear-gradient(90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_footer/scott-webb-176434.png);
+  color: #fff;
+  bottom: 0;
+  min-height: 40vh;
+}
+
+#map {
+  height: 60vh;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,9 +14,13 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>-->
     <link rel="stylesheet" href="../sass/normalize.css">
     <link rel="stylesheet" href="../sass/style.css">
     <link rel="stylesheet" href="../icomoon/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 </head>
 <body>
     <section class="section section__navigation">
@@ -35,8 +39,8 @@
                         <ul class="nav__list" id="nav__list">
                             <li class="nav__item active__item"><a class="link" href="#">About us</a></li>
                             <li class="nav__item"><a class="link" href="#Projects">Projects</a></li>
-                            <li class="nav__item"><a class="link" href="#">News</a></li>
-                            <li class="nav__item"><a class="link" href="#">Contact</a></li>
+                            <li class="nav__item"><a class="link" href="#News">News</a></li>
+                            <li class="nav__item"><a class="link" href="#Contacts">Contact</a></li>
                         </ul>
                     </nav>                   
                 </div>
@@ -51,7 +55,7 @@
     <div class="slider">
         <section class="section section__main section__firstchild item">
             <div class="container">
-                <div class="content__main">
+                <div class="content__main content content">
                     <div class="content__items">
                         <h1 class="h1">Simple&Morden</h1>
                         <h3 class="h3">We make the world's beautiful every day</h3>
@@ -64,7 +68,7 @@
         </section>
         <section class="section section__main section__secondchild item">
             <div class="container">
-                <div class="content__main">
+                <div class="content__main content">
                     <div class="content__items">
                         <h1 class="h1">cheap&high quality</h1>
                         <h3 class="h3">We make the world's beautiful every day</h3>
@@ -77,7 +81,7 @@
         </section>
         <section class="section section__main section__thirdchild item">
             <div class="container">
-                <div class="content__main">
+                <div class="content__main content">
                     <div class="content__items">
                         <h1 class="h1">quickly&efficiently</h1>
                         <h3 class="h3">We make the world's beautiful every day</h3>
@@ -98,7 +102,7 @@
     </div>
     <section id="Projects" class="section section__projects">
         <div class="container">
-            <div class="content__projects">
+            <div class="content__projects content">
                 <header class="header__projects"><h2 class="h2 strip">what we do</h2></header>
                 <main class="main__projects">
                     <div class="main__items">
@@ -136,13 +140,131 @@
             </div>
         </div>
     </section>
-    <section class="section section__news">
-
+    <section id="News" class="section section__news">
+        <div class="container">
+            <div class="content__news content" >
+                <header class="header__news"><h2 class="h2 strip">latest news</h2></header> 
+                <main class="news__list" id="newsSlider">
+                    <div class="news__item">
+                        <div class="news__image"><img class="img" src="../images/section_news/matthew-hamilton-202227.png" alt="news"></div>
+                        <h3 class="h3">See The Unmatched Beauty Of The Great.</h3>
+                        <p class="p">Free directories: directories are perfect for customers that are...</p>
+                        <div class="news__data">
+                            <p class="news__text">Isaac Dunn</p>
+                            <p class="news__text">09 Feb 2017</p>
+                        </div>
+                    </div>
+                    <div class="news__item">
+                        <div class="news__image"><img class="img" src="../images/section_news/lauren-mancke-60633.png" alt="news"></div>
+                        <h3 class="h3">Effective Advertising Pointers.</h3>
+                        <p>Having a home based business is a wonderful asset to your life...</p>
+                        <div class="news__data">
+                            <p class="news__text">Dominic Freeman</p>
+                            <p class="news__text">24 Apr 2017</p>
+                        </div>
+                    </div>
+                    <div class="news__item">
+                        <div class="news__image"><img class="img" src="../images/section_news/joel-filipe-151690.png" alt="news"></div>
+                        <h3 class="h3">Hypnotize Yourself Into The Ghost.</h3>
+                        <p>There are many things that are important to catalog design....</p>
+                        <div class="news__data">
+                            <p class="news__text">Alice Ward</p>
+                            <p class="news__text">30 Dec 2017</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
     </section>
-    <section class="section"></section>
-    <section class="section"></section>
-    <section class="section"></section>
-    
+    <section id="Gallery" class="section section__gallery">
+        <div class="container">
+            <div class="content__gallery content" >
+                <header class="header__gallery"><h2 class="h2 strip">Gallery</h2></header> 
+                <main class="gallery__list">
+                    <select name="Cities">
+                        <option disabled selected onclick="filterSelection('all')">All</option>
+                        <option value="popular" onclick="filterSelection('popular')">popular</option>
+                        <option value="unpopular" onclick="filterSelection('unpopular')">unpopular</option>
+                    </select>
+                    <div class="photos">
+                        <div class="photo1 gallery__photo filterDiv popular"><img class="gallery__img" src="../images/section_gallery/echo-grid-156713.png" alt="popular"></div>
+                        <div class="photo2 gallery__photo filterDiv popular"><img class="gallery__img" src="../images/section_gallery/fuse-brussels-169216.png" alt="popular"></div>
+                        <div class="photo3 gallery__photo filterDiv popular"><img class="gallery__img" src="../images/section_gallery/photos-13323p6Bdc0uhr8Bq.png" alt="popular"></div>
+                        <div class="photo4 gallery__photo filterDiv popular"><img class="gallery__img" src="../images/section_gallery/scott-webb-176434 (1).png" alt="popular"></div>
+                        <div class="photo5 gallery__photo filterDiv"><img class="gallery__img" src="../images/section_news/joel-filipe-151690.png" alt="popular"></div>
+                        <div class="photo1 gallery__photo filterDiv unpopular"><img class="gallery__img" src="../images/section_news/joel-filipe-151690.png" alt="unpopular"></div>
+                        <div class="photo2 gallery__photo filterDiv unpopular"><img class="gallery__img" src="../images/section_gallery/echo-grid-156713.png" alt="unpopular"></div>
+                        <div class="photo3 gallery__photo filterDiv unpopular"><img class="gallery__img" src="../images/section_news/lauren-mancke-60633.png" alt="unpopular"></div>
+                        <div class="photo4 gallery__photo filterDiv unpopular"><img class="gallery__img" src="../images/section_gallery/fuse-brussels-169216.png" alt="unpopular"></div>
+                        <div class="photo5 gallery__photo filterDiv unpopular"><img class="img" src="../images/section_news/matthew-hamilton-202227.png" alt="unpopular"></div>
+                    </div>
+                    <button class="btn">See more</button>
+                </main>
+            </div>
+        </div>
+    </section>
+    <section id="Contacts" class="section section__contacts">
+        <div class="map" id="map"></div>
+        <div class="container contacts__container">
+            <div class="content__contacts content" >
+                <header class="header__contacts"><h2 class="h2 strip">get in touch</h2></header> 
+                <main class="contacts__form">
+                    <div class="contacts__item">
+                        <p class="contacts__p">
+                            <img class="contacts__img" src="" alt="contacts">
+                            <a class="contacts__link" href="https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D1%86%D0%B5%D0%BD%D1%82%D1%80+%D0%BD%D0%B0+%D0%A1%D1%82%D0%BE%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%BC%D1%83/@50.3495729,30.5516074,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4ce5102781b5b:0x45e22257fd9586f3!8m2!3d50.3495695!4d30.5537961" target="_blank">91 Nolan Extensions Suite 670</a>
+                        </p>
+                        <p class="contacts__p">
+                            <img class="contacts__img" src="" alt="contacts">
+                            <a class="contacts__link" href="tel:879-332-9375"> +001 356-868-2454</a>
+                        </p>
+                        <p class="contacts__p">
+                            <img class="contacts__img" src="" alt="contacts">
+                            <a class="contacts__link" href="mailto:info@pixsellz.io">gahuy93@gmail.com</a>
+                        </p>
+                        <p class="contacts_p">
+                            <img class="contacts__img" src="" alt="contacts">
+                            <a class="contacts__link" href="#">From 07:05AM to 19:30PM</a>
+                        </p>                        
+                    </div>
+                    <div class="contacts__item" id="commentform">
+                        <div class="login__name validation-error">
+                            <label class="name"></label>
+                            <input id="author" class="input__form" type="text" name="name" required="true" placeholder="Name">
+                        </div>
+                        <div class="login__email validation-error">
+                            <label for="useremail"></label>
+                            <input  id="email" class="input__form" type="email" name="useremail" required="true" placeholder="E-mail">
+                        </div>
+                        <div class="login__button">
+                            <button type="submit" class="btn">submit</button>
+                        </div>
+                    </div>                   
+                </main>
+            </div>
+        </div>
+    </section>
+    <section class="section section__footer">
+        <div class="container">
+            <footer class="header">
+                <div class="header__item"><a class="link" href="#" target="_blank"><img src="../images/logo/Logo.svg" alt="logo"></a>
+                </div>
+                <div class="header__item header__thirdchild">
+                    <a class="link" href="#"><div class="circle"><span class="icon icon-facebook"></span></div></a>
+                    <a class="link" href="#"><div class="circle"><span class="icon icon-twitter"></span></div></a>
+                    <a class="link" href="#"><div class="circle"><span class="icon icon-pinterest2"></span></div></a>                                     
+                </div>
+            </footer>
+        </div>
+    </section>
+
+
+
+
+    <!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="../js.js/js.js"></script>
     
 </body>
