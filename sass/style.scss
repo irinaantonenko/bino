@@ -1,19 +1,15 @@
 $main_color: #fff;
-$color2: #e8e8e8;
-$h1: 3em;
-$h2: 2.25em;
-$logo: 1.5em;
-$h3: 1.375em;
-$h4: 1.25em;
-$main_text: 16px;
-$min_text: 0.875em;
-$line: 1.625em;
-$max_letter: 0.3em;
-$main_letter: 0.19em;
-$min_letter: 0.06em;
-$font_family1: 'Aleo', serif;
-$font_family2: 'Josefin Sans', sans-serif;
-$main_background: #5474fd;
+$color2: #2c4058;
+$color3: #7e5aff;
+$h1: 4.44em;
+$h2: 2.44em;
+$h3: 1.22em;
+$h4: 1em;
+$main_text: 18px;
+$min_text: 0.77em;
+$line: 1.22em;
+$font_family1: 'Gotham', serif;
+$font_family2: 'Open Sans', sans-serif;
 $xxxl: 2560px;
 $xxl: 1570px;
 $xl: 1170px;
@@ -22,15 +18,33 @@ $md: 770px;
 $sm: 480px;
 $xs: 375px;
 $xs: 320px;
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/gotham-medium-webfont.woff) format('woff'),
+         url(../fonts/gotham-medium-webfont.woff2) format('woff2'),
+         url(../fonts/Gotham-Medium-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/gothambold1.eot);
+    src: url(../fonts/gothambold1.eot#iefix) format('embedded-opentype'),
+         url(../fonts/gothambold1.woff) format('woff'),
+         url(../fonts/gothambold1.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
 * {
     box-sizing: border-box;
 }
 body {
     margin: 0;
-    color: $main_color;
+    color: $color2;
     line-height: $line;
     font-size: $main_text;
-    font-family: $font_family2;
+    font-family: $font_family1;
+    font-weight: 400;
     @media (max-width:$lg) {
         font-size: $min_text;
     }
@@ -41,7 +55,7 @@ body {
     background-size: cover;
 }
 .container {
-    max-width: 1110px;
+    max-width: 1170px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -67,29 +81,35 @@ body {
         max-width: 300px;
     }
 }
+.section__main{
+    color: $main_color;
+}
 .section__firstchild {
-    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_main/tu-tram-pham-202263.png);
+    background-image: linear-gradient(90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_main/tu-tram-pham-202263.png);
     min-height: calc(100vh - 5.7em);
 }
 .section__secondchild {
-    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_project/photos-1284iH4Hjf4mhNgW.png);
+    background-image: linear-gradient( 90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_project/photos-1284iH4Hjf4mhNgW.png);
     min-height: calc(100vh - 5.7em);
 }
 .section__thirdchild {
-    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_news/matthew-hamilton-202227.png);
+    background-image: linear-gradient( 90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_news/matthew-hamilton-202227.png);
     min-height: calc(100vh - 5.7em);
 }
 .section__news {
-    background-image: linear-gradient( 270deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_news/city2x.png);
+    background-image: linear-gradient(90deg, rgba(59, 127, 211, 0.8) 0%, rgba(35, 203, 249, 0.8) 100%), url(../images/section_news/city2x.png);
     min-height: calc(100vh - 5.7em);
 }
 .section__navigation {
-    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%);
+    background-image: linear-gradient(90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%);
     color: $main_color;
     min-height: 5.7em;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
+}
+.icon {
+    font-size: 16px;
 }
 .header {
     margin: 0;
@@ -114,11 +134,11 @@ body {
 .nav__list {
     margin: 0;
     display: flex;
-    
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
     padding: 0;
+    text-transform: uppercase;
 }
 .nav__item {
     margin: 0;
@@ -128,11 +148,9 @@ body {
     padding: 10px 0;
     text-decoration: none;
     font-size: $min_text;
-    font-family: $font_family1;
-    font-weight: 400;
     :hover {
         background-color: $main_color;
-        color: rgba(124, 91, 249, 1);
+        color: $color3;
         box-shadow: inset 0 0 0 2px;
     }     
 }
@@ -147,6 +165,7 @@ body {
     text-decoration: none;
     color: $main_color;
     padding: 10px;
+    text-transform: uppercase;
 }
 .burger {
     display: none;
@@ -206,9 +225,8 @@ body {
     background-color: inherit;
     border-radius: 50%;
     border: #fff 1px solid;
-    color: #fff;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -325,6 +343,10 @@ body {
 .h1, .h2, .h3, .btn {
     text-align: center;
     text-transform: uppercase;
+}
+.h1{
+    font-size: $h1;
+    color: $main_color;
 }
 .section__projects {
     color: #000;
@@ -537,7 +559,7 @@ body {
 
 }
 .section__footer {
-    background-image: linear-gradient( 90deg, rgba(85, 182, 254, 0.6), rgba(124, 91, 249, 0.8) 70.71%), url(../images/section_footer/scott-webb-176434.png);
+    background-image: linear-gradient( 90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_footer/scott-webb-176434.png);
     color: $main_color;
     bottom: 0;
     min-height: 40vh;
@@ -545,4 +567,5 @@ body {
 #map{
     height: 60vh;
     position: relative;
+    z-index: 1;
 }
