@@ -8,10 +8,11 @@ $h4: 1em;
 $main_text: 18px;
 $min_text: 0.77em;
 $line: 1.22em;
-$font_family1: 'Gotham', serif;
+$font_family1: 'GothamBook', serif;
+$font_family3: 'Gotham', serif;
 $font_family2: 'Open Sans', sans-serif;
 $xxxl: 2560px;
-$xxl: 1570px;
+$xxl: 1600px;
 $xl: 1170px;
 $lg: 988px;
 $md: 770px;
@@ -23,6 +24,15 @@ $xs: 320px;
     src: url(../fonts/gotham-medium-webfont.woff) format('woff'),
          url(../fonts/gotham-medium-webfont.woff2) format('woff2'),
          url(../fonts/Gotham-Medium-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GothamBook';
+    src: url(../fonts/GothamBook.eot);
+    src: url(../fonts/GothamBook.eot#iefix) format('embedded-opentype'),
+         url(../fonts/GothamBook.woff) format('woff'),
+         url(../fonts/GothamBook.ttf) format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -66,7 +76,7 @@ body {
         max-width: 1500px;
     }
     @media (max-width: $xxl) {
-        max-width: 1100px;
+        max-width: 1170px;
     }
     @media (max-width: $xl) {
         max-width: 900px;
@@ -112,7 +122,7 @@ body {
     font-size: 16px;
 }
 .header {
-    margin: 0;
+    margin: 9px 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -122,7 +132,6 @@ body {
         display: flex;
         flex-direction: row;
         color: $main_color;
-        font-size: $logo;
         font-weight: bold;
     }
     &__thirdchild {
@@ -138,16 +147,16 @@ body {
     justify-content: space-between;
     flex-direction: row;
     padding: 0;
-    text-transform: uppercase;
 }
 .nav__item {
     margin: 0;
     cursor: pointer;
     list-style: circle;
     list-style-position: inside;
-    padding: 10px 0;
+    padding: 10px 32px;
     text-decoration: none;
     font-size: $min_text;
+    text-transform: uppercase;
     :hover {
         background-color: $main_color;
         color: $color3;
@@ -155,7 +164,7 @@ body {
     }     
 }
 .active__item {
-    color: white;
+    color: $main_color;
     font-weight: bold;
     list-style: inside;
 }
@@ -165,7 +174,6 @@ body {
     text-decoration: none;
     color: $main_color;
     padding: 10px;
-    text-transform: uppercase;
 }
 .burger {
     display: none;
@@ -211,7 +219,8 @@ body {
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
-            background-color: $main_background;
+            text-transform: uppercase;
+            font-size: $min_text;
         }
         &__item {
             display: block;
@@ -230,6 +239,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .circle:hover {
     opacity: 0.5;
@@ -243,6 +253,11 @@ body {
     margin-right: 6px;
     transform: rotate(135deg);
     margin-left: 5px;
+}
+.scroll {
+    left: calc(50% - 20px);
+    position: absolute;
+    bottom: 40px;
 }
 .content__main {
     padding-top: 20vh;
@@ -302,11 +317,12 @@ body {
     text-shadow: 1px 1px 1px #000, 0 0 1em #000;
 }
 .slider-dots {
-  text-align: center;
+    text-align: center;
+    margin-top: 20px;
     &__item{
     cursor: pointer;
-    height: 12px;
-    width: 12px;
+    height: 9px;
+    width: 9px;
     margin: 0 2px;
     background-color: #ddd;
     border-radius: 50%;
@@ -340,30 +356,39 @@ body {
         opacity: 1
     }
 }
-.h1, .h2, .h3, .btn {
+.h1, .h2, .h3, .h4, .btn {
     text-align: center;
     text-transform: uppercase;
+}
+.btn{
+    color: $color2;
 }
 .h1{
     font-size: $h1;
     color: $main_color;
+    letter-spacing: 4px;
+    font-weight: 500;
+    font-family: $font_family3;
+}
+.h2{
+    font-size: $h2;
+    font-weight: 500;
+    font-family: $font_family3;
+}
+.h4{
+    font-size: $main_text;
+    letter-spacing: 5px;
+    font-weight: 400;
 }
 .section__projects {
-    color: #000;
     margin-top: 70px;
 }
 .header__projects {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
-    font-family: 'Opensans', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.5em;
-    line-height: 1.17em;
     position: relative;
+    padding-top: 140px;
 }
 .main__projects {
     display: flex;
@@ -376,12 +401,30 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
-
+.main__item {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box__left{
+    width: 585px;
+    height: 470px;
+    background-color: #55b7ff;
+    top: 100px;
+    left: -215px;
+    position: absolute;
+    z-index: -1;
+}
+.item__special{
+    position: relative;
+}
 .photo {
     position: relative; 
-    width: 30em;
-    height: 30em;
+    width: 630px;
+    height: 460px;
+    top: 170px;
+    left: 0;
     @media (max-width: $xl) {
         width: 28em;
         height: 28em;
@@ -409,24 +452,28 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     object-fit: cover;
     object-position:top;
 }
 .strip:after {
     content: "";
     display: block;
-    width: 96px;
+    width: 100px;
     height: 1px;
-    background-color: #000;
+    background-color: $color2;
     position: absolute;
-    left: calc(50% - 43px);
-    top:  6px;
+    left: calc(50% - 50px);
+    top:  100px;
     border-radius: 50px;
 }
+.strip_special:after{
+    background-color: $main_color;
+}
 .header__news{
-    padding-top: 50px;
+    padding-top: 140px;
     position: relative;
+    color: $main_color;
 }
 .news__list {
     display: flex;
@@ -435,7 +482,6 @@ body {
     border-radius: 20px;
     overflow: hidden;
     flex-wrap: wrap;
-    color: #000;
 }
 .news__item {
     display: flex;
@@ -449,7 +495,7 @@ body {
     cursor: pointer;
     min-width: 260px;
     padding-bottom: 10px;
-    background-color: #fff;
+    background-color: $main_color;
 }
 .news__item:hover {
     margin: 15px;
@@ -474,11 +520,11 @@ body {
     left: 0;
     object-fit: cover;
     object-position:center;
+    z-index: 2;
 }
 .header__gallery, .header__contacts{
-    padding-top: 50px;
+    padding-top: 140px;
     position: relative;
-    color: #000;
 }
 .gallery__img{
     width: 100%;
@@ -530,7 +576,7 @@ body {
     &__link {
         cursor: pointer;
         text-decoration: none;
-        color: #252A34;
+        color: $color2;
     }   
     &__link:hover {
         border-bottom: 3px solid rgba(179, 79, 236, 0.9);
@@ -542,21 +588,17 @@ body {
     position:absolute;
 }
 .content__contacts {
-    background: #fff;
+    background: $main_color;
 }
 .contacts__form {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    color: #000;
-    
+    align-items: stretch;    
 }
 .contacts__item {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    background: #fff;
-
 }
 .section__footer {
     background-image: linear-gradient( 90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_footer/scott-webb-176434.png);
