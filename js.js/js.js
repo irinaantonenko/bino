@@ -130,3 +130,23 @@ let map = L.map('map', {
 });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 L.marker([51.505, -0.09]).addTo(map);
+/*Scroll*/
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      let href = this.getAttribute('href').substring(1);
+
+      const scrollTarget = document.getElementById(href);
+
+      const topOffset = document.querySelector('.scrollto').offsetHeight;
+      const elementPosition = scrollTarget.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - topOffset;
+
+      window.scrollBy({
+          top: offsetPosition,
+          behavior: 'smooth'
+      });
+  });
+});

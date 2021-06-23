@@ -624,7 +624,7 @@ body {
 .box__right {
   background-color: #7e5aff;
   top: 100px;
-  left: 330px;
+  left: 300px;
 }
 
 .photo {
@@ -906,7 +906,7 @@ body {
   height: 450px;
   position: absolute;
   top: 390px;
-  left: 410px;
+  left: calc(50% - 375px);
   z-index: 3;
 }
 
@@ -914,9 +914,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -933,6 +932,14 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+}
+
+p {
+  padding-left: 5px;
+}
+
+.login {
+  padding-top: 10px;
 }
 
 .section__footer {
