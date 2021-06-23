@@ -495,6 +495,12 @@ body {
   border: 1px solid #2c4058;
 }
 
+@media (max-width: 1170px) {
+  .btn {
+    display: none;
+  }
+}
+
 .btn:hover {
   cursor: pointer;
   opacity: 0.7;
@@ -572,6 +578,13 @@ body {
           align-items: center;
 }
 
+@media (max-width: 1170px) {
+  .main__items {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .main__item {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -588,6 +601,13 @@ body {
           justify-content: space-between;
   float: left;
   position: relative;
+}
+
+@media (max-width: 1570px) {
+  .main__item {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .text__item {
@@ -619,6 +639,12 @@ body {
   left: -215px;
   position: absolute;
   z-index: -1;
+}
+
+@media (max-width: 1570px) {
+  .box__left, .box__right {
+    display: none;
+  }
 }
 
 .box__right {
@@ -910,6 +936,12 @@ body {
   z-index: 3;
 }
 
+@media (max-width: 1570px) {
+  .content__contacts {
+    display: none;
+  }
+}
+
 .contacts__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -946,7 +978,7 @@ p {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(85, 183, 255, 0.8)), to(rgba(125, 89, 255, 0.8))), url(../images/section_footer/scott-webb-176434.png);
   background-image: linear-gradient(90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_footer/scott-webb-176434.png);
   color: #fff;
-  min-height: 42vh;
+  min-height: 43vh;
   position: absolute;
   z-index: 1;
   top: 57vh;
