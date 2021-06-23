@@ -362,7 +362,17 @@ body {
 }
 .btn{
     color: $color2;
-
+    font-size: $min_text;
+    width: 190px;
+    height: 50px;
+    border: 1px solid $color2;
+}
+.btn:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.btn--center{
+    margin-left: calc(50% - 95px);
 }
 .h1{
     font-size: $h1;
@@ -375,6 +385,10 @@ body {
     font-size: $h2;
     font-weight: 500;
     font-family: $font_family3;
+}
+.h3{
+    font-size: $h3;
+    line-height: 24px;
 }
 .h4{
     font-size: $main_text;
@@ -544,8 +558,9 @@ body {
     padding-top: 140px;
     position: relative;
 }
+
 .photos{
-    margin: 50px;
+    margin: 50px 0;
 }
 .gallery__list{
     margin-bottom: 200px;
@@ -609,10 +624,17 @@ body {
     } 
 }
 .contacts__container{
-    position:absolute;
+    max-width: unset;
+    position: relative;
 }
 .content__contacts {
     background: $main_color;
+    width: 770px;
+    height: 450px;
+    position: absolute;
+    top: 390px;
+    left: 410px;
+    z-index: 3;
 }
 .contacts__form {
     display: flex;
@@ -627,11 +649,17 @@ body {
 .section__footer {
     background-image: linear-gradient( 90deg, rgba(85, 183, 255, 0.8) 0%, rgba(125, 89, 255, 0.8) 100%), url(../images/section_footer/scott-webb-176434.png);
     color: $main_color;
-    bottom: 0;
-    min-height: 40vh;
+    min-height: 42vh;
+    position: absolute;
+    z-index: 1;
+    top: 57vh;
+    bottom: 0; 
 }
 #map{
-    height: 60vh;
-    position: relative;
+    height: 57vh;
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: 0;
     z-index: 1;
-}   
+}
