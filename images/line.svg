@@ -1,0 +1,16 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 7" width="195" height="7">
+	<title>Header</title>
+	<defs>
+		<image width="198" height="10" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAKCAYAAADvsSGSAAAAAXNSR0IArs4c6QAAASdJREFUWEftmD9qAkEYxd+XJoRFTGPYSRNzDf/g1kkEj+AVcoIkN1BIrzewcUgbIXsOTZNZtInYKeyGbTTgVjMLLu6b/n3z5vfNG/hGwEUCJHBEQMiEBEjgmACDUYBbMe8F11fb7QgiQQL8isjAn34NC2CttBYYjAK03jw2FwDu/ltJgOdbHQ4KYK+UFhiME7fdPDT6EBll2FgoHd6f2F5pt98HY70yL6Wl4HjwC+CzUlMzmzLmqfWKJMlkr3Ro9XBtVqYTA4GNH2qAak29HYKxNO+EYk1AV2/Uh436p9vuSRxPMrTfSod1m5pRFHke4NloqQEqvr+0epEIL18CnDHy5ZlHNQYjD4qONdJfqcvdbixA+iuVDuJjDt6OUB3lDIYjQMrPk8Af+ohDC2hcBoMAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Header">
+		<g id="Slider">
+			<g id="Design">
+				<use id="Shape 171 copy" href="#img1" transform="matrix(1,0,0,1,-2,-2)"/>
+			</g>
+		</g>
+	</g>
+</svg>
