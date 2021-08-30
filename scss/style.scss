@@ -6,6 +6,8 @@ $sm: 425px;
 $xs: 375px;
 $xxs: 320px;
 $main_color: #f4f5f9;
+$main_color-light: #fff;
+$main_color-theme: #e74c3c;
 $main_font-family: 'Open Sans', sans-serif;
 $font-family2:'Source Sans Pro', sans-serif;
 * {
@@ -48,9 +50,11 @@ body {
             top: 43%;
             left: 50px;
         }   
-        &:hover {
-            background-color: #e74c3c;
-            color: #fff;
+        @media (hover) {
+            &:hover {
+            background-color: $main_color-theme;
+            color: $main_color-light;
+            }
         }            
     }
     &__arrow {
@@ -82,14 +86,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover { 
-        background-color: #e74c3c;        
+    @media (hover) {
+        &:hover { 
+            background-color: $main_color-theme; 
+        }           
     }    
     &__square {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: #f4f5f9;
+    background-color: $main_color;
     position: absolute;
     cursor: pointer;
     left: calc(50% - 32px);
@@ -130,11 +136,11 @@ body {
         color: #f1ebe7;
         font-weight: 300;
         padding: 4px 8px;
-        border: 3px solid #f4f5f9;
+        border: 3px solid $main_color;
         &--special {
             color: #4a4c55;
             font-weight: 700;
-            background-color: #f4f5f9;
+            background-color: $main_color;
             padding: 4px 10px;
         }
     }
@@ -164,8 +170,8 @@ body {
         font-weight: 700;
         line-height: 2;
         &:active, &:hover  {
-            color: #e74c3c;  
-            border-bottom: 1px solid #e74c3c;
+            color: $main_color-theme;  
+            border-bottom: 1px solid $main_color-theme;
             padding: 9px 0;                         
         }
     }
@@ -183,7 +189,7 @@ body {
     &__line {
         width: 80%;
         height: 3px;
-        background: #f4f5f9;    
+        background: $main_color;    
     }
 }    
 @media (max-width: $lg) {
@@ -195,7 +201,7 @@ body {
         max-height: 100vh;
         overflow: auto;
         position: absolute;
-        background-color: #e74c3c;
+        background-color: $main_color-theme;
         width: 100%;
         top: 50px;
         left: 0;
@@ -260,7 +266,7 @@ body {
         width: 7px;
         height: 7px;
         border-radius: 3px;
-        background-color: #e74c3c;
+        background-color: $main_color-theme;
         margin: 0 15px;
     }
     &__text {
@@ -285,21 +291,23 @@ body {
         height: 56px;
         border-radius: 3px;
         filter: drop-shadow(0px 2px 2.5px rgba(0,0,0,0.25));
-        background-color: #e74c3c;
+        background-color: $main_color-theme;
         margin: 0 15px;
         font-size: 14px;
-        color: #ffffff;
+        color: $main_color-light;
         font-weight: 700;
         cursor: pointer;
-        &:hover {
-            border: 1px solid #e74c3c;  
-            background-color: transparent; 
-            color: #e74c3c;
+        @media (hover) {
+            &:hover {
+                border: 1px solid $main_color-theme;  
+                background-color: transparent; 
+                color: $main_color-theme;
+            }
         }
         &--special {
             line-height: 40px;
             height: 54px;
-            border: 1px solid #ffffff;  
+            border: 1px solid $main_color-light;  
             background-color: transparent;                     
         }
     }         
@@ -319,7 +327,7 @@ body {
         color: #6a6a6a;
         font-weight: 700;
         font-family: $font-family2;
-        filter: drop-shadow(0px 1px 0px #ffffff);
+        filter: drop-shadow(0px 1px 0px $main_color-light);
         margin: 15px 0;
     }
     &__text {
@@ -377,7 +385,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     padding: 65px 50px;
-    color: #fff;
+    color: $main_color-light;
     &__subtitle {
         font-size: 14px;
         letter-spacing: 1px;
@@ -394,7 +402,7 @@ body {
             content: "";
             display: block;
             width: 44px;
-            border: 4px solid #ffffff;
+            border: 4px solid $main_color-light;
             z-index: 5;
             margin: 15px 0 0 0; 
             left: 0;               
@@ -442,20 +450,20 @@ body {
         height: 110px;
         border-radius: 50%;
         background-color: transparent;
-        border: 1px solid #ffffff;
+        border: 1px solid $main_color-light;
         display: flex;
         align-items: center;
         justify-content: center;
     } 
     &__icons {
-       color: #f4f5f9;
+       color: $main_color;
        font-size: 30px;
     } 
     &__number {
         font-size: 30px;
         letter-spacing: 2px;
         line-height: 30px;
-        color: #f4f5f9;
+        color: $main_color;
         font-weight: 700;
         font-family: $font-family2;
         margin: 45px 0 0 0;
@@ -463,7 +471,7 @@ body {
     &__title {
         font-size: 18px;
         line-height: 30px;
-        color: #f4f5f9;
+        color: $main_color;
         font-family: $font-family2;
         font-weight: 400;
         margin: 10px 0 0 0;
@@ -485,7 +493,7 @@ body {
         color: #6a6a6a;
         font-weight: 700;
         font-family: $font-family2;
-        filter: drop-shadow(0px 1px 0px #ffffff);
+        filter: drop-shadow(0px 1px 0px $main_color-light);
         margin: 15px 0;
         margin-top: 150px;
         text-transform: uppercase;
@@ -518,7 +526,7 @@ body {
         height: 100%;        
         min-width: 380px;
         min-height: 609px;
-        background-color: #f4f5f9;
+        background-color: $main_color;
     }
     &__header {
         min-width: 380px;
@@ -534,7 +542,7 @@ body {
     &__name {
         font-size: 24px;
         letter-spacing: 2px;
-        color: #ffffff;
+        color: $main_color-light;
         font-weight: 600;
         margin: 50px 0;
     } 
@@ -554,7 +562,7 @@ body {
     &__square {
         width: 153px;
         height: 152px;
-        background-color: #ffffff;
+        background-color: $main_color-light;
         border-radius: 50%;
         position: absolute;
         left: calc(50% - 76px);
@@ -618,16 +626,16 @@ body {
         border: none;
         font-size: 12px;
         letter-spacing: 0px;
-        color: #ffffff;
+        color: $main_color-light;
         font-weight: 600;
         &--special {
-            background-color: #e74c3c;
+            background-color: $main_color-theme;
         }
         @media (hover){
             &:hover {
-                border: 1px solid #e74c3c;  
+                border: 1px solid $main_color-theme;  
                 background-color: transparent; 
-                color: #e74c3c;
+                color: $main_color-theme;
             }
         }
     }
@@ -666,7 +674,7 @@ body {
     &__title {
         font-size: 36px;
         letter-spacing: 4px;
-        color: #ffffff;
+        color: $main_color-light;
         font-weight: 700;
         font-family: $font-family2;        
         margin: 150px 0 0 0;
@@ -675,7 +683,7 @@ body {
     &__text {
         font-size: 14px;
         line-height: 29px;
-        color: #f4f5f9;
+        color: $main_color;
         font-weight: 400;
         margin: 15px 0;
     }
@@ -683,7 +691,7 @@ body {
         margin: 15px 0;
     }
     &__line {
-        border: 1px solid #ffffff;
+        border: 1px solid $main_color-light;
     } 
     &__leaders {
         display: flex;
@@ -694,9 +702,9 @@ body {
     &__leader {
         width: 50px;
         height: 50px;
-        border: 3px solid #e74c3c;
+        border: 3px solid $main_color-theme;
         border-radius: 50%;
-        background-color: #e74c3c;
+        background-color: $main_color-theme;
         position: relative;          
         z-index: 2;
         overflow: hidden; 
@@ -704,12 +712,14 @@ body {
         transition-timing-function: ease-out;
         transition-duration: 550ms;
         cursor: pointer;
-        &:hover {
-            transform: scale(1.2,1.2);
-            transition-timing-function: ease-out;
-            transition-duration: 550ms;
-            filter: drop-shadow(0px 5px 7.5px #000000);
-            opacity: 0.9;
+        @media (hover) {
+            &:hover {
+                transform: scale(1.2,1.2);
+                transition-timing-function: ease-out;
+                transition-duration: 550ms;
+                filter: drop-shadow(0px 5px 7.5px #000000);
+                opacity: 0.9;
+            }    
         } 
         &--pos1 {
             top: 65px;
@@ -756,7 +766,7 @@ body {
         font-size: 14px;
         letter-spacing: 1px;
         line-height: 24px;
-        color: #ffffff;
+        color: $main_color-light;
         font-weight: 400;
         font-family: $font-family2; 
                      
@@ -764,14 +774,14 @@ body {
     &__lead {
         font-size: 24px;
         letter-spacing: 2px;
-        color: #e74c3c;
+        color: $main_color-theme;
         font-weight: 600;
         margin: 0;
         &::before {
             content: "";
             display: block;
             height: 50px;
-            border: 1px solid #ffffff;
+            border: 1px solid $main_color-light;
             z-index: 5;
             margin: 0 0 -15px 0;             
             position: absolute;  
@@ -787,7 +797,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #f4f5f9;
+    background-color: $main_color;
     padding-bottom: 140px;
     &__container {
         display: flex;
@@ -800,7 +810,7 @@ body {
         color: #6a6a6a;
         font-weight: 700;
         font-family: $font-family2;
-        filter: drop-shadow(0px 1px 0px #ffffff);
+        filter: drop-shadow(0px 1px 0px $main_color-light);
         margin: 150px 0 15px;
     }
     &__text {
@@ -829,7 +839,7 @@ body {
     }
     &__item {             
         filter: drop-shadow(0px 3px 2.5px rgba(0,0,0,0.1));
-        background-color: #ffffff;
+        background-color: $main_color-light;
         padding: 90px;
         display: flex;
         flex-direction: column;
@@ -879,14 +889,15 @@ body {
         background-color: #e74e3e;
         font-size: 14px;
         line-height: 40px;
-        color: #ffffff;
+        color: $main_color-light;
         font-weight: 700;
-        border: 1px solid #e74c3c;        
+        border: 1px solid $main_color-theme;        
         border-radius: 2px;
+        cursor: pointer;
         @media (hover){
             &:hover {                  
                 background-color: transparent; 
-                color: #e74c3c;
+                color: $main_color-theme;
             }
         }
     }
@@ -907,19 +918,21 @@ body {
         height: 53px;
         border-radius: 27px;
         filter: drop-shadow(0px 3px 2.5px rgba(0,0,0,0.25));
-        background-color: #e74c3c;
+        background-color: $main_color-theme;
         display: flex;
         align-items: center;
         justify-content: center;
-        color:#ffffff;
+        color:$main_color-light;
         transform: rotate(225deg);
         top: -26px;
         right: 50px;
         cursor: pointer;
-        &:hover {
-            border: 1px solid #e74c3c;  
-            background-color: #ffffff; 
-            color: #e74c3c; 
+        @media (hover) {
+            &:hover {
+                border: 1px solid $main_color-theme;  
+                background-color: $main_color-light; 
+                color: $main_color-theme; 
+            }    
         }
     }
     &__container {
@@ -941,10 +954,12 @@ body {
         cursor: pointer;
         &--special {
             filter: drop-shadow(0px 3px 1.5px rgba(0,0,0,0.25));
-            color: #e74c3c;
+            color: $main_color-theme;
         }
-        &:hover {
-            color: #fff;
+        @media (hover) {
+            &:hover {
+                color: $main_color-light;
+            }    
         }
     }
     &__text {
