@@ -3,6 +3,7 @@
           box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1297,17 +1298,102 @@ body {
 .footer {
   background-color: #202020;
   min-height: 90px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.footer__button {
+  position: absolute;
+  z-index: 5;
+  width: 53px;
+  height: 53px;
+  border-radius: 27px;
+  -webkit-filter: drop-shadow(0px 3px 2.5px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 3px 2.5px rgba(0, 0, 0, 0.25));
+  background-color: #e74c3c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  top: -26px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.footer__button:hover {
+  border: 1px solid #e74c3c;
+  background-color: #ffffff;
+  color: #e74c3c;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.footer__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer__icon {
-  width: 20px;
-  height: 16px;
+  font-size: 20px;
+  padding: 10px;
   color: #999999;
+  cursor: pointer;
 }
 
 .footer__icon--special {
   -webkit-filter: drop-shadow(0px 3px 1.5px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 3px 1.5px rgba(0, 0, 0, 0.25));
   color: #e74c3c;
+}
+
+.footer__icon:hover {
+  color: #fff;
+}
+
+.footer__text {
+  font-size: 14px;
+  line-height: 24px;
+  color: #999999;
+  font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */
