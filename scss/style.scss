@@ -852,8 +852,10 @@ body {
     &__relative {
         position: relative;
         min-width: 8.33rem;
-        &:hover .team__info {
-            display: flex;
+        @media (hover) {
+            &:hover .team__info {
+                display: flex;
+            }    
         }
     }    
     &__post {
