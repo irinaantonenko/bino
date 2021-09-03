@@ -26,65 +26,70 @@
     <link rel="stylesheet" href="../scss/style.css">   
 </head>
 <body>
-    <div class="home" id="home">
-        <div class="container home__container">
-            <header class="header">
-                <div class="header__item">
-                    <span class="header__logo header__logo--special">B</span>
-                    <span class="header__logo">INO</span>
-                </div>
-                <div class="header__item">
-                    <input id="burger" type="checkbox" class="burger">
-                    <label for="burger" class="burger__label">
-                        <span class="burger__line"></span>
-                        <span class="burger__line"></span>
-                        <span class="burger__line"></span>
-                    </label>
-                    <nav class="header__navigation">
-                        <ul class="list">
-                            <li class="list__item"><a class="list__link" href="#home"><span class="list__item--active">Home</span></a></li>
-                            <li class="list__item"><a class="list__link" href="#stats">About us</a></li>
-                            <li class="list__item"><a class="list__link" href="#">Рortfolio</a></li>
-                            <li class="list__item"><a class="list__link" href="#Рricing">Рricing</a></li>
-                            <li class="list__item"><a class="list__link" href="#team">Team</a></li>
-                            <li class="list__item"><a class="list__link" href="#blog">Blog</a></li>
-                            <li class="list__item"><a class="list__link" href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>                   
-                </div>  
-            </header>   
-            <div class="homepage">
-                <h3 class="homepage__subtitle">Our Clients Are Our First Priority</h3>
-                <h1 class="homepage__title">WELCOME TO BINO</h1>
-                <div class="homepage__lines">
-                    <div class="homepage__line"></div>
-                    <div class="homepage__square"></div>
-                    <div class="homepage__line"></div>
-                </div>               
-                <p class="homepage__text" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <div class="homepage__buttons">
-                    <button class="homepage__button">GET STARTED NOW</button>
-                    <button class="homepage__button homepage__button--special">LEARN MORE</button>
-                </div>
-            </div>    
-        </div> 
-        <div class="home__arrows home__arrows--left">
-            <div class="home__arrow home__arrow--left"></div>
-        </div>
-        <div class="home__arrows home__arrows--right">
-            <div class="home__arrow home__arrow--right"></div>
-        </div>                 
-    </div>  
-    <a class="anchor" href="#blog"> 
-        <div class="anchor__square">         
-            <img class="anchor__image"
-            src="../images/anchor.svg"
-            alt="anchor"> 
-        </div>     
-    </a>
-    <div class="line"></div>
+    <header class="header" id="myHeader">
+        <div class="container header__container">
+            <a class="header__item" href="#home">
+                <span class="header__logo header__logo--special">B</span>
+                <span class="header__logo">INO</span>
+            </a>
+            <div class="header__item">
+                <input id="burger" type="checkbox" class="burger">
+                <label for="burger" class="burger__label">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </label>
+                <nav class="header__navigation">
+                    <ul class="list">
+                        <li class="list__item"><a class="list__link" href="#home"><span class="list__item--active">Home</span></a></li>
+                        <li class="list__item"><a class="list__link" href="#stats">About us</a></li>
+                        <li class="list__item"><a class="list__link" href="#">Рortfolio</a></li>
+                        <li class="list__item"><a class="list__link" href="#Рricing">Рricing</a></li>
+                        <li class="list__item"><a class="list__link" href="#team">Team</a></li>
+                        <li class="list__item"><a class="list__link" href="#blog">Blog</a></li>
+                        <li class="list__item"><a class="list__link" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>                   
+            </div>
+        </div>  
+    </header>
+    <div class="home">
+        <div class="home__wrap" id="home">        
+            <div class="container home__container">               
+                <div class="homepage">
+                    <h3 class="homepage__subtitle">Our Clients Are Our First Priority</h3>
+                    <h1 class="homepage__title">WELCOME TO BINO</h1>
+                    <div class="homepage__lines">
+                        <div class="homepage__line"></div>
+                        <div class="homepage__square"></div>
+                        <div class="homepage__line"></div>
+                    </div>               
+                    <p class="homepage__text" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <div class="homepage__buttons">
+                        <button class="homepage__button">GET STARTED NOW</button>
+                        <button class="homepage__button homepage__button--special">LEARN MORE</button>
+                    </div>
+                </div>    
+            </div> 
+            <div class="home__arrows home__arrows--left">
+                <div class="home__arrow home__arrow--left"></div>
+            </div>
+            <div class="home__arrows home__arrows--right">
+                <div class="home__arrow home__arrow--right"></div>
+            </div> 
+                     
+        </div>  
+        <a class="anchor" href="#blog"> 
+            <div class="anchor__square">         
+                <img class="anchor__image"
+                src="../images/anchor.svg"
+                alt="anchor"> 
+            </div>     
+        </a> 
+        <div class="line"></div>        
+    </div>
     <main class="main">
-        <section class="blog">
+        <section class="blog" id="blog">
             <div class="container blog__container">
                 <h2 class="blog__title">OUR BLOG</h2>
                 <p class="blog__text">Suspendisse sed eros mollis, tincidunt felis eget, interdum era</p>
@@ -94,77 +99,53 @@
                     <div class="homepage__line blog__line"></div>
                 </div> 
             </div>
-            <div id="blog" class="blog__content">
-                <div class="blog__item">
-                    <div class="hover">
-                        <p class="hover__subtitle">art / t-shir</p>
-                        <h4 class="hover__title">T-SHIRT DESIGN</h4>
-                        <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
-                        <p class="hover__button">Read more &raquo;</p>
-                    </div>
+            <div class="blog__content">
+                <div class="blog__item">                    
                     <img class="blog__images" src="../images/1.png" alt="img">
                 </div>
                 <div class="blog__item">
-                    <div class="hover">
+                    <a class="hover" href="#"> 
+                        <div class="hover__arrow"></div>
                         <p class="hover__subtitle">art / t-shir</p>
                         <h4 class="hover__title">T-SHIRT DESIGN</h4>
                         <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
                         <p class="hover__button">Read more &raquo;</p>
-                    </div>
-                    <img class="blog__images" src="../images/hover.png" alt="img">
+                    </a>                    
                 </div>
-                <div class="blog__item">
-                    <div class="hover">
-                        <p class="hover__subtitle">art / t-shir</p>
-                        <h4 class="hover__title">T-SHIRT DESIGN</h4>
-                        <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
-                        <p class="hover__button">Read more &raquo;</p>
-                    </div>
+                <div class="blog__item">                    
                     <img class="blog__images" src="../images/2.png" alt="img">
                 </div>
                 <div class="blog__item">
-                    <div class="hover">
+                    <a class="hover" href="#"> 
+                        <div class="hover__arrow"></div>
                         <p class="hover__subtitle">art / t-shir</p>
                         <h4 class="hover__title">T-SHIRT DESIGN</h4>
                         <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
                         <p class="hover__button">Read more &raquo;</p>
-                    </div>
-                    <img class="blog__images" src="../images/hover.png" alt="img">
+                    </a>                    
                 </div>
                 <div class="blog__item">
-                    <div class="hover">
+                    <a class="hover" href="#"> 
+                        <div class="hover__arrow hover__arrow--right"></div>
                         <p class="hover__subtitle">art / t-shir</p>
                         <h4 class="hover__title">T-SHIRT DESIGN</h4>
                         <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
                         <p class="hover__button">Read more &raquo;</p>
-                    </div>
-                    <img class="blog__images" src="../images/hover.png" alt="img">
+                    </a>                    
                 </div>
-                <div class="blog__item">
-                    <div class="hover">
-                        <p class="hover__subtitle">art / t-shir</p>
-                        <h4 class="hover__title">T-SHIRT DESIGN</h4>
-                        <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
-                        <p class="hover__button">Read more &raquo;</p>
-                    </div>
+                <div class="blog__item">                   
                     <img class="blog__images" src="../images/3.png" alt="img">
                 </div>
                 <div class="blog__item">
-                    <div class="hover">
+                    <a class="hover" href="#"> 
+                        <div class="hover__arrow hover__arrow--right"></div>
                         <p class="hover__subtitle">art / t-shir</p>
                         <h4 class="hover__title">T-SHIRT DESIGN</h4>
                         <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
                         <p class="hover__button">Read more &raquo;</p>
-                    </div>
-                    <img class="blog__images" src="../images/hover.png" alt="img">
+                    </a>                    <
                 </div>
-                <div class="blog__item">
-                    <div class="hover">
-                        <p class="hover__subtitle">art / t-shir</p>
-                        <h4 class="hover__title">T-SHIRT DESIGN</h4>
-                        <p class="hover__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</p>
-                        <p class="hover__button">Read more &raquo;</p>
-                    </div>
+                <div class="blog__item">                    
                     <img class="blog__images" src="../images/4.png" alt="img">
                 </div>                        
             </div>               
@@ -313,7 +294,7 @@
                     <div class="homepage__line contact__line"></div>
                 </div> 
                 <div class="contact__content">
-                    <div class="contact__item ">
+                    <div class="contact__item">
                         <div class="contact__address">
                             <h4 class="contact__subtitle">OUR ADDRESS</h4>
                             <p class="contact__info"><a href="https://goo.gl/maps/V6hjsWqLW2tGjEYf9" class="contact__link">House #13, Streat road, Sydney 2310 Australia</a></p>                            
@@ -328,7 +309,7 @@
                             <p class="contact__info"><a class="contact__link" href="contactus@email.com">contactus@email.com</a></p>
                         </div> 
                     </div> 
-                    <div class="contact__item contact__item--special">
+                    <form action="#" method="get" class="contact__item contact__item--special">
                         <div class="contact__name">
                             <label class="contact__label">Name</label>
                             <input class="contact__input" type="text" name="name">
@@ -346,7 +327,7 @@
                             <input class="contact__input contact__input--special" type="text" name="message">
                         </div>
                         <button class="contact__button">Send message</button>    
-                    </div> 
+                    </form> 
                 </div>
             </div>
         </section>
@@ -367,5 +348,17 @@
             <div class="footer__item"><span class="footer__text">Kazi Erfan &#169; All Rights Reserved</span></div>
         </div>        
     </footer>
+    <script>
+        window.onscroll = function() {myFunction()};        
+        let header = document.getElementById("myHeader");
+        let sticky = header.offsetTop;        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("header__fixed");
+          } else {
+            header.classList.remove("header__fixed");
+          }
+        }
+    </script>
 </body>
 </html>
