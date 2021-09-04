@@ -40,8 +40,7 @@ body {
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
-  padding-top: 23.33rem;
+  padding: 23.33rem 0 16.67rem;
 }
 
 .home__arrows {
@@ -194,7 +193,13 @@ body {
 
 @media (max-width: 425px) {
   .container {
-    max-width: 38rem;
+    max-width: 37rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 33rem;
   }
 }
 
@@ -412,6 +417,7 @@ body {
   color: #f4f5f9;
   height: 100%;
   width: 100%;
+  padding-bottom: 2rem;
 }
 
 .homepage__subtitle {
@@ -1191,13 +1197,10 @@ body {
 }
 
 .team__wrap {
-  background-image: url("../images/wra.svg");
+  background: url("../images/wra.svg") bottom no-repeat;
   min-height: 61.67rem;
   width: 100%;
   height: 100%;
-  background-color: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .team__container {
@@ -1304,7 +1307,8 @@ body {
 }
 
 .team__leader--pos1 {
-  top: 5.42rem;
+  top: 8.2rem;
+  left: -17.7rem;
 }
 
 .team__leader--pos2 {
@@ -1680,6 +1684,12 @@ body {
   padding: 10px;
   color: #999999;
   cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .footer__icon {
+    padding: 5px;
+  }
 }
 
 .footer__icon--special {
